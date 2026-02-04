@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WHAT'S YOUR MAKE-UP!</title>
+
+<style>
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #4a0538;
+    color: white;
+}
+
+/* ===== GRID LAYOUT ===== */
+.grid-container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    gap: 15px;
+    padding: 15px;
+    min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+header {
+    grid-area: header;
+    background: #520738;
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+/* ===== SIDEBAR ===== */
+.aside {
+    grid-area: sidebar;
+    background: #7d2354;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.aside ul {
+    list-style: none;
+}
+
+.aside li {
+    background: rgba(180, 96, 175, 0.5);
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ===== MAIN ===== */
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.box {
+    background: #905085;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ✅ RESPONSIVE IMAGE FIX */
+.box img {
+    width: 100%;
+    aspect-ratio: 4 / 3;   /* keeps shape */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    grid-area: footer;
+    background: #6d0651;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 800px) {
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    /* ✅ MOBILE IMAGE BEHAVIOR */
+    .box img {
+        aspect-ratio: auto;
+        height: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="grid-container">
+
+<header>
+    <h1>WHAT'S YOUR MAKE-UP!</h1>
+</header>
+
+<div class="aside">
+    <ul>
+        <li>MASCARA</li>
+        <li>FOUNDATION</li>
+        <li>EYESHADOW</li>
+        <li>CONCEALER</li>
+        <li>LIPSTICK</li>
+        <li>BLUSH</li>
+    </ul>
+</div>
+
+<main>
+    <div class="box">
+        <img src="37e7c06a-7a96-451c-a5ac-c5a3cd435a6c.jpg">
+        <h3>MASCARA</h3>
+        <p>A makeup product used on eyelashes.</p>
+    </div>
+
+    <div class="box">
+        <img src="1e4d3da7-e464-4869-ba7d-abc2cc26350f.jpg">
+        <h3>FOUNDATION</h3>
+        <p>A base makeup applied to the face.</p>
+    </div>
+
+    <div class="box">
+        <img src="hq720.jpg">
+        <h3>EYESHADOW</h3>
+        <p>Applied on the eyelids to add color.</p>
+    </div>
+</main>
+
+<footer>
+    BEAUTY • STYLE • MAKEUP • © 2026
+</footer>
+
+</div>
+</body>
+</html>
